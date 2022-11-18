@@ -61,6 +61,9 @@ john : х : 0 : 0 : : /home/john:/bin/sh
     $ sudo usermod -a -G root helg
     
 #### Создать пользователя, настроить SSH
+> apt-get install ssh
+> service ssh stop
+> service ssh start
 > sudo vim /etc/ssh/sshd_config
      
      AllowUsers helg user2 user3
