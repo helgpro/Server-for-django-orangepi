@@ -72,6 +72,14 @@ john : х : 0 : 0 : : /home/john:/bin/sh
      Restart SSH server, change www user password:
 
 > sudo service ssh restart
+> service sshd restart
+> /etc/init.d/sshd stop
+> /etc/init.d/sshd start
+> systemctl restart ssh.service
+> systemctl restart sshd.service
+> systemctl restart ssh
+> systemctl restart sshd
+
 > sudo passwd www
 
 '''Второй параметр разрешает или запрещает вход по SSH под суперпользователем. Запрещаем вход суперпользователю.
