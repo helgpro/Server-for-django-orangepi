@@ -60,17 +60,22 @@ john : х : 0 : 0 : : /home/john:/bin/sh
 
     $ sudo usermod -a -G root helg
     
-#### Создать пользователя, настроить SSH
+####  Настройка сервера SSH
 > apt-get install ssh
 > service ssh stop
 > service ssh start
+###### В настройкаках убрать подключения рута и вход по паролю
 > sudo vim /etc/ssh/sshd_config
      
      AllowUsers helg user2 user3
      PermitRootLogin no
      PasswordAuthentication no
-     Restart SSH server, change www user password:
 
+
+#### Restart SSH server:
+##### Рабоч вариан перезагр
+> /etc/init.d/ssh start   or stop
+##### Еще варианты
 > sudo service ssh restart
 > service sshd restart
 > /etc/init.d/sshd stop
@@ -79,7 +84,6 @@ john : х : 0 : 0 : : /home/john:/bin/sh
 > systemctl restart sshd.service
 > systemctl restart ssh
 > systemctl restart sshd
-
 > sudo passwd www
 
 '''Второй параметр разрешает или запрещает вход по SSH под суперпользователем. Запрещаем вход суперпользователю.
